@@ -2,8 +2,8 @@ const express = require('express');
 const { notes } = require('./db/db.json');
 const apiRoutes = require('./routes/apiRoutes');
 const htmlRoutes = require('./routes/htmlRoutes');
-// const fs = require('fs');
-// const path = require('path');
+ const fs = require('fs');
+ const path = require('path');
 
 const PORT = process.env.PORT || 3001;
 
@@ -17,6 +17,12 @@ app.use(express.json());
 // This means that all of our front-end code can now be accessed without having a specific server endpoint created for it!
 // Every time we create a server that will serve a front end as well as JSON data, we'll always want to use this middleware.
 app.use(express.static('public'));
+
+// app.get('/api/notes', (req, res) => {
+//    let results = notes;
+//    console.log(req.query);
+//    res.json(results);
+// });
 
 app.use('/api', apiRoutes);
 
