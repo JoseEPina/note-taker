@@ -19,12 +19,6 @@ app.use(express.urlencoded({ extended: true }));
 // Every time we create a server that will serve a front end as well as JSON data, we'll always want to use this middleware.
 app.use(express.static('public'));
 
-// app.get('/api/notes', (req, res) => {
-//    let results = notes;
-//    console.log(req.query);
-//    res.json(results);
-// });
-
 app.use('/api', apiRoutes);
 
 app.use('/', htmlRoutes);

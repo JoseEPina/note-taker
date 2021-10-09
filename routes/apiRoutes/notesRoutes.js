@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { notes } = require('../../db/db.json');
-//const { renderNoteList, renderActiveNote,  } = requi
+//const { renderNoteList, renderActiveNote,  } = require
 const uid = require('uid2'); // npm package to generate an ID value
 
 const fs = require('fs'); // Needed here to use writeFile
@@ -9,10 +9,6 @@ const path = require('path'); // module utility to for working with file and dir
 router.get('/notes', (req, res) => {
    console.log(req.query);
    res.json(notes);
-   // let results = notes; // Probably no longer needed
-   // if (req.query) {
-   //    results = renderActiveNote(req.query, results);
-   // }
 });
 
 router.post('/notes', (req, res) => {
@@ -33,7 +29,8 @@ router.post('/notes', (req, res) => {
 
 router.delete('/notes/:id', (req, res) => {
    // notes path needed /:id in order for it to work
-   const id = req.params.id; // from newly generated data
+   const id = req.params.id; // from newly generated data id
+   // 
    const noteIndex = notes.findIndex((element) => element.id === id);
    notes.splice(noteIndex, 1); // splice method to remove selected index in our array
 
