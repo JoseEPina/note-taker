@@ -24,13 +24,13 @@ router.post('/notes', (req, res) => {
       // Save JS array data as JSON. Other two arguments used, will keep data formatted.
       JSON.stringify({ notes }, null, 2)
    );
-   res.json(notes); // ?? to send data as JSON response? But where?
+   res.json(newNote); // replacing with newNote since that is what is being created
 });
 
 router.delete('/notes/:id', (req, res) => {
    // notes path needed /:id in order for it to work
    const id = req.params.id; // from newly generated data id
-   // 
+   //
    const noteIndex = notes.findIndex((element) => element.id === id);
    notes.splice(noteIndex, 1); // splice method to remove selected index in our array
 
@@ -39,7 +39,7 @@ router.delete('/notes/:id', (req, res) => {
       path.join(__dirname, '../../db/db.json'), //
       JSON.stringify({ notes }, null, 2) // keeping data formatted just as before.
    );
-   res.json(notes); // ?? to send data as JSON response? But where?
+   res.json(notes); // leaving notes variable unchanged here due to the information it is handling in the array
 });
 
 module.exports = router;

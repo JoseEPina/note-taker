@@ -1,3 +1,5 @@
+// const { getNotes, saveNote, deleteNote } = require('../../assets/js/apiNotes');
+
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -12,6 +14,10 @@ if (window.location.pathname === '/notes') {
    noteList = document.querySelectorAll('.list-container .list-group');
 }
 
+// activeNote is used to keep track of the note in the textarea
+let activeNote = {};
+
+//#region functions
 // Show an element
 const show = (elem) => {
    elem.style.display = 'inline';
@@ -22,8 +28,6 @@ const hide = (elem) => {
    elem.style.display = 'none';
 };
 
-// activeNote is used to keep track of the note in the textarea
-let activeNote = {};
 
 const getNotes = () =>
    fetch('/api/notes', {
@@ -49,6 +53,7 @@ const deleteNote = (id) =>
          'Content-Type': 'application/json',
       },
    });
+
 
 const renderActiveNote = () => {
    hide(saveNoteBtn);
@@ -167,6 +172,8 @@ const renderNoteList = async (notes) => {
 // Gets notes from the db and renders them to the sidebar
 const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
+//#endregion function
+
 if (window.location.pathname === '/notes') {
    saveNoteBtn.addEventListener('click', handleNoteSave);
    newNoteBtn.addEventListener('click', handleNewNoteView);
@@ -175,5 +182,3 @@ if (window.location.pathname === '/notes') {
 }
 
 getAndRenderNotes();
-
-module.exports = renderActiveNote;
