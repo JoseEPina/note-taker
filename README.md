@@ -1,6 +1,6 @@
 # Note Taker
 
-![License Badge](./assets/images/badge.svg)
+![License Badge](./assets/badge.svg)
 
 ## Description
 
@@ -52,7 +52,7 @@ The application also makes use of a [NPM](https://www.npmjs.com/) Package called
 
 ## Project URLs
 
--  The URL of the deployed application in [Heroku](https://www.heroku.com):
+-  The URL of the deployed application in Heroku:
    https://joseepina-note-taker.herokuapp.com/
 
 -  The URL of the GitHub repository:
