@@ -1,14 +1,24 @@
 {
-  "notes": [
+  "notesArray": [
     {
-      "title": "N1",
-      "text": "T1",
-      "id": "xE_EWT17xr"
+      "title": "Go to the Grocery Store",
+      "text": "Buy Fruit\nBuy Vegetables\nBuy Bread",
+      "id": "hVgDXiEUl1"
     },
     {
-      "title": "This is My Note",
-      "text": "Hello There!",
-      "id": "iN-5GRhwd9"
+      "title": "Make School Payments",
+      "text": "Payment due before October 12th",
+      "id": "XOMT3vRatq"
+    },
+    {
+      "title": "Go to the Gym",
+      "text": "Do Back Workout",
+      "id": "H4a1rxsyST"
+    },
+    {
+      "title": "Schedule Work Meeting",
+      "text": "Schedule after Lunch Break",
+      "id": "9X3xPmDQtK"
     }
   ]
 }
